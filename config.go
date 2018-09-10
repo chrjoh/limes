@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"os/user"
 	"path/filepath"
 	"runtime"
 	"strings"
@@ -229,10 +228,10 @@ func activeAWSEnvironment() (active bool, err error) {
 }
 
 func homeDir() (homeDir string, err error) {
-	usr, err := user.Current()
-	if err == nil {
-		return usr.HomeDir, nil
-	}
+	//usr, err := user.Current()
+	//if err == nil {
+	//	return usr.HomeDir, nil
+	//}
 
 	// fallback to environemt variables
 	var home string
