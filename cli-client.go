@@ -15,7 +15,7 @@ import (
 	"gopkg.in/yaml.v2"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	pb "github.com/otm/limes/proto"
+	pb "github.com/chrjoh/limes/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"

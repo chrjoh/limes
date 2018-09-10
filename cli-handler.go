@@ -7,7 +7,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 
-	pb "github.com/otm/limes/proto"
+	pb "github.com/chrjoh/limes/proto"
 	"golang.org/x/net/context"
 )
 
