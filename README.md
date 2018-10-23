@@ -7,7 +7,7 @@ Limes is the Local Instance MEtadata Service and emulates parts of the [AWS Inst
 The AWS SDK refreshes credentials automatically when using limes. So **all** services will change profile if the profile is changed in limes.
 
 ##  Installation
-1. Download binary for your architecture from https://github.com/otm/limes/releases/latest
+1. Download binary for your architecture from https://github.com/chrjoh/limes/releases/latest
 2. Copy the file to `/usr/local/bin` or appropriate location in PATH
 3. Make it executable: `chmod +x /usr/local/bin/limes`
 4. **Linux:** Allow limes to bind to privileged ports `setcap 'cap_net_bind_service=+ep' /usr/local/bin/limes`
@@ -34,16 +34,16 @@ sudo /sbin/ifconfig lo0 alias 169.254.169.254
 
 ##### Linux:
 ```
-wget -O /etc/bash_completion.d/limes https://raw.githubusercontent.com/otm/limes/master/assets/limes
+wget -O /etc/bash_completion.d/limes https://raw.githubusercontent.com/chrjoh/limes/master/assets/limes
 ```
 
 ##### Mac
 ```
-wget -O $(brew --prefix)/etc/bash_completion.d/limes https://raw.githubusercontent.com/otm/limes/master/assets/limes
+wget -O $(brew --prefix)/etc/bash_completion.d/limes https://raw.githubusercontent.com/chrjoh/limes/master/assets/limes
 ```
 
 ##### Fixing Completion for AWS CLI
-There is currently a bug in the completer for the AWS CLI that makes it misbehave when used with `_command_offset`. This can be solved by adding a secondary completion entry for the AWS CLI. To make this persistent add it to your bash configuration.  
+There is currently a bug in the completer for the AWS CLI that makes it misbehave when used with `_command_offset`. This can be solved by adding a secondary completion entry for the AWS CLI. To make this persistent add it to your bash configuration.
 
 **Linux**
 ```
@@ -59,11 +59,11 @@ complete -C "$(brew --prefix)/bin/aws_completer" limes run aws
 To be done
 
 ## Configuring IMS (Instance Meta-data Service)
-There is an [example configuration file](https://github.com/otm/limes/blob/master/config.example). The configuration file is documented. Make a copy of the file and place it in `~/.limes/config`.
+There is an [example configuration file](https://github.com/chrjoh/limes/blob/master/config.example). The configuration file is documented. Make a copy of the file and place it in `~/.limes/config`.
 
 ```
 mkdir -p ~/.limes
-wget -O ~/.limes/config https://raw.githubusercontent.com/otm/limes/master/config.example
+wget -O ~/.limes/config https://raw.githubusercontent.com/chrjoh/limes/master/config.example
 ```
 
 Use your favorite text editor to update ~/.limes/config
@@ -99,7 +99,7 @@ If AWS environment variables, `.aws/credentials` or `.aws/config` are present th
 ## Security
 The service should be configured on the loop back device, and only accessible from the host it is running on.
 
-**Note:** It is important not to run any service that could forwards request on the host running Limes as this would be a security risk. However, this is no difference from the setup on an Amazon Linux instance in AWS. If an attacker could forward requests to 169.254.169.254/24 your credentials could be compromised. Please note that an attacker could utilize a DNS to resolve to this address, so always be aware where you forward requests to.  
+**Note:** It is important not to run any service that could forwards request on the host running Limes as this would be a security risk. However, this is no difference from the setup on an Amazon Linux instance in AWS. If an attacker could forward requests to 169.254.169.254/24 your credentials could be compromised. Please note that an attacker could utilize a DNS to resolve to this address, so always be aware where you forward requests to.
 
 ## Roadmap
 * Windows support (If I get someone to test it)
@@ -108,7 +108,7 @@ The service should be configured on the loop back device, and only accessible fr
 To build you need a Go compiler and environment setup. See https://golang.org/ for more information regarding setting up and configuring Go.
 
 ```
-go get github.com/otm/limes
+go get github.com/chrjoh/limes
 go build
 ```
 
