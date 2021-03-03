@@ -7,12 +7,12 @@ Limes is the Local Instance MEtadata Service and emulates parts of the [AWS Inst
 The AWS SDK refreshes credentials automatically when using limes. So **all** services will change profile if the profile is changed in limes.
 
 ##  Installation
-1. Download binary for your architecture from https://github.com/chrjoh/limes/releases/latest
+1. Compile binary for your architecture from https://github.com/chrjoh/limes/
 2. Copy the file to `/usr/local/bin` or appropriate location in PATH
 3. Make it executable: `chmod +x /usr/local/bin/limes`
 4. **Linux:** Allow limes to bind to privileged ports `setcap 'cap_net_bind_service=+ep' /usr/local/bin/limes`
 
-**Note:** On Mac OS limes server is needed to run as root for the time being.
+**Note:** On Mac OS limes server is needed to run as root for the time being. Updated to work with the new OSX chip M1
 
 ## Configuring the Loop Back Device
 The configuration below adds the necessary IP configuration on the loop back device. Without this configuration the service can not start.
